@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 
-        <link rel="stylesheet" href="yourclique/css/home.css">
+        <link rel="stylesheet" href="css/home.css">
 
 
         
@@ -31,7 +31,28 @@
       </head>
 
       <body>
-        <?php require APPROOT . '/views/vnc/header.php'; ?>
+          <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+           <div class="container ">
+             <a href="home.html" class="navbar-brand">YourClique</a>
+             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse " id="navbarCollapse">
+               <ul class="navbar-nav ml-auto " style="margin-right:-40px;">
+                 <li class="nav-item active">
+                   <a href="" class="nav-link">Discover</a>
+                 </li>
+                 <li class="nav-item">
+                   <a href="aboutus.html" class="nav-link">About Us</a>
+                 </li>
+                 <li class="nav-item">
+                   <a href="blog.html" class="nav-link">Blog</a>
+                 </li>
+               </ul>
+             </div>
+           </div>
+         </nav>
+      
 
        <section id="showcase">
          <div id="myCarousel" class="carousel slide" data-ride="carousel" >
@@ -116,7 +137,7 @@
             <div id="accordion" >
              <div class="card border border-rounded border-danger">
                <div class="card-header text-center text-uppercase">
-                 <a class="card-link join"  href="C:\xampp\htdocs\projectMVC-master\app\views\pages\index.php">
+                 <a class="card-link join"  href="home.html">
                    Join Us
                  </a>
                </div>
@@ -125,7 +146,7 @@
                         <!-- <?php //flash('register_success'); ?> -->
                         <h2>Subscribe</h2>
                         <p>Please fill in your credentials to Subscribe.</p>
-                        <form action="<?php echo URLROOT; ?>/users/subscribe" method="post">
+                        <form  method="post">
                           <div class="input-group mb-3 input-group-sm ">
                             <div class="input-group-prepend ">
                               <span class="input-group-text bg-primary ">
@@ -133,8 +154,8 @@
 
                               </span>
                             </div>
-                              <input type="text" name="name" class="form-control form-control-lg <?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['name']; ?>" onkeyup="nameValidation()" placeholder="Enter your name..." required>
-                              <span class="invalid-feedback"><?php echo $data['name_err']; ?></span>
+                              <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter your name..." required>
+                              
                           </div>  
 
                           <div class="input-group mb-3 input-group-sm ">
@@ -143,12 +164,12 @@
                                 <i class="material-icons">&#xe554;</i>
                               </span>
                             </div>
-                              <input type="text" name="email" class="form-control form-control-lg <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>" onkeyup="emailValidation()"placeholder="Enter your email..." required>
-                              <span class="invalid-feedback"><?php echo $data['email_err']; ?></span>
+                              <input type="text" name="email" class="form-control form-control-lg" placeholder="Enter your email..." required>
+                              
                           </div>  
                           
                             <div>
-                              <input type="submit" class="btn btn-primary btn-block" value="Subscribe">
+                              <a href="gallery.html" class="btn btn-primary btn-block">Subscribe></a>
                             </div>
                           </form>
                             
@@ -227,8 +248,83 @@
 </div>
 </div>
 </section>
-<?php require APPROOT . '/views/vnc/footer.php'; ?>
+<footer id="main-footer" class="text-center p-4">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p>Copyright &copy;
+          <span id="year"></span>YourClique</p>
+          <div class="col">
+            <div class="container p-1">
+              <h6>Ways to pay</h6>
+              <a href="#"><img src="img/paypal.png" style="width: 70px;"></a>
+              <a href="#"><img src="img/visa1.jpg" style="width: 70px;"></a>
+            </div>
+          </div>
 
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+  <script type="text/javascript">
+
+            //carousel
+            $(".hbox").mouseover(function(){
+              $(this).css("background", "rgba(0, 0, 0, 0.3)");
+            }); 
+            $(".hbox").mouseout(function(){
+              $(this).css("background", "rgba(0, 0, 0, 0.7)");
+            });
+
+
+
+            $('#des1').mouseover(function () {
+              $('#des1').css("font-size", "60px");
+            });
+            $('#des1').mouseout(function () {
+              $('#des1').css("font-size", "40px");
+            });
+            
+
+            $('.carousel').carousel({
+              pause: 'hover'
+            });
+
+        //vidio
+          // Video Play
+          $(function () {
+              // Auto play modal video
+              $(".video").click(function () {
+                var theModal = $(this).data("target"),
+                videoSRC = $(this).attr("data-video"),
+                videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
+                $(theModal + ' iframe').attr('src', videoSRCauto);
+                $(theModal + ' button.close').click(function () {
+                  $(theModal + ' iframe').attr('src', videoSRC);
+                });
+              });
+            });
+            //lightbox
+            $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+              event.preventDefault();
+              $(this).ekkoLightbox();
+            });
+            $('#year').text(new Date().getFullYear());
+
+
+          </script>
 
 
 
